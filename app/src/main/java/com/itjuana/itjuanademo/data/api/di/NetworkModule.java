@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.itjuana.itjuanademo.common.Constants;
+import com.itjuana.itjuanademo.data.api.ITJuanaInterface;
 
 import java.util.concurrent.TimeUnit;
 
@@ -71,6 +72,12 @@ public class NetworkModule {
                 .addCallAdapterFactory(rxJava2CallAdapterFactory)
                 .client(okHttpClient)
                 .build();
+    }
+
+    @Provides
+    @Singleton
+    ITJuanaInterface providesITJuanaInterface(Retrofit retrofit){
+        return retrofit.create(ITJuanaInterface.class);
     }
 
 }

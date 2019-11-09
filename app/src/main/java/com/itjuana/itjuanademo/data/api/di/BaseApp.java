@@ -9,10 +9,10 @@ public class BaseApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        networkComponent = DaggerNetworkComponent
-//                .builder()
-//                .networkModule(new NetworkModule(this))
-//                .build();
+        networkComponent = DaggerNetworkComponent
+                .builder()
+                .networkModule(new NetworkModule(this))
+                .build();
     }
 
     public NetworkComponent getNetworkComponent() {
